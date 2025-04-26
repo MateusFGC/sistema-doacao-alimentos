@@ -1,11 +1,11 @@
 {
     "_default": {
         "1": {
-            "task": "buy coffee",
+            "task": "Buy more coffe",
             "owner": "Mateus",
             "status": "todo"
         },
-        "3": {
+        "2": {
             "task": "Walk the dog",
             "owner": "Mateus",
             "status": "todo"
