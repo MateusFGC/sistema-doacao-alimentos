@@ -10,16 +10,22 @@ class Todo:
     owner: str
     status: Literal['done', 'todo'] = 'todo'
 
+    #Define um método para converter a instância da classe Todo em um dicionário usando a função asdict()
     def as_dict(self):
         return asdict(self)
     
     @classmethod
+    #Define um método que recebe um dicionario e converte de volta a objeto
     def from_dict(cls, data):
         return Todo(**data)
 
 #Dados do BD
-t1 = Todo('buy coffee', 'Mateus', 'todo')    
-t2 = Todo('Walk the dog', 'Mateus')    
+data_base = [
+    Todo('buy coffee', 'Mateus', 'todo'),    
+    Todo('Walk the dog', 'Mateus'),
+    Todo('bla bla bla', 'Carlos'), 
+    Todo('qwert', 'calismar', 'done'), 
+]
 
 #Criação e execução do BD
 db_path = Path(__file__).parent / 'db.json'
@@ -29,8 +35,7 @@ db = TinyDB(db_path, indent=4)
 db.truncate()
 
 #Inserir os dados por empacotamento
-index_1, index2 = db.insert_multiple(
-    [t1.as_dict(), t2.as_dict()])
+news_id = db.insert_multiple([tarefa.as_dict() for tarefa in data_base])
 
 #Remover dados por index
 db.remove(doc_ids=[])
