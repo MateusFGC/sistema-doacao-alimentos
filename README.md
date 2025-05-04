@@ -1,4 +1,4 @@
-# Sistema Simples de Doação de Alimentos (CLI)
+# Sistema de Doação de Alimentos (CLI)
 
 Um aplicativo simples de linha de comando (CLI) desenvolvido em Python para gerenciar o registro e a solicitação de doações de alimentos, utilizando TinyDB para armazenamento de dados.
 
